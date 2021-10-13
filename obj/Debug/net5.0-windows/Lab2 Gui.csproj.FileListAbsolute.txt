@@ -1,0 +1,18 @@
+D:\ИРНИТУ\2 курс\Технология программирования\Лаба 2\Исходники\Lab2 Gui\bin\Debug\net5.0-windows\Lab2 Gui.exe
+D:\ИРНИТУ\2 курс\Технология программирования\Лаба 2\Исходники\Lab2 Gui\bin\Debug\net5.0-windows\Lab2 Gui.deps.json
+D:\ИРНИТУ\2 курс\Технология программирования\Лаба 2\Исходники\Lab2 Gui\bin\Debug\net5.0-windows\Lab2 Gui.runtimeconfig.json
+D:\ИРНИТУ\2 курс\Технология программирования\Лаба 2\Исходники\Lab2 Gui\bin\Debug\net5.0-windows\Lab2 Gui.runtimeconfig.dev.json
+D:\ИРНИТУ\2 курс\Технология программирования\Лаба 2\Исходники\Lab2 Gui\bin\Debug\net5.0-windows\Lab2 Gui.dll
+D:\ИРНИТУ\2 курс\Технология программирования\Лаба 2\Исходники\Lab2 Gui\bin\Debug\net5.0-windows\ref\Lab2 Gui.dll
+D:\ИРНИТУ\2 курс\Технология программирования\Лаба 2\Исходники\Lab2 Gui\bin\Debug\net5.0-windows\Lab2 Gui.pdb
+D:\ИРНИТУ\2 курс\Технология программирования\Лаба 2\Исходники\Lab2 Gui\obj\Debug\net5.0-windows\Lab2 Gui.csproj.AssemblyReference.cache
+D:\ИРНИТУ\2 курс\Технология программирования\Лаба 2\Исходники\Lab2 Gui\obj\Debug\net5.0-windows\Lab2_Gui.Form1.resources
+D:\ИРНИТУ\2 курс\Технология программирования\Лаба 2\Исходники\Lab2 Gui\obj\Debug\net5.0-windows\Lab2 Gui.csproj.GenerateResource.cache
+D:\ИРНИТУ\2 курс\Технология программирования\Лаба 2\Исходники\Lab2 Gui\obj\Debug\net5.0-windows\Lab2 Gui.GeneratedMSBuildEditorConfig.editorconfig
+D:\ИРНИТУ\2 курс\Технология программирования\Лаба 2\Исходники\Lab2 Gui\obj\Debug\net5.0-windows\Lab2 Gui.AssemblyInfoInputs.cache
+D:\ИРНИТУ\2 курс\Технология программирования\Лаба 2\Исходники\Lab2 Gui\obj\Debug\net5.0-windows\Lab2 Gui.AssemblyInfo.cs
+D:\ИРНИТУ\2 курс\Технология программирования\Лаба 2\Исходники\Lab2 Gui\obj\Debug\net5.0-windows\Lab2 Gui.csproj.CoreCompileInputs.cache
+D:\ИРНИТУ\2 курс\Технология программирования\Лаба 2\Исходники\Lab2 Gui\obj\Debug\net5.0-windows\Lab2 Gui.dll
+D:\ИРНИТУ\2 курс\Технология программирования\Лаба 2\Исходники\Lab2 Gui\obj\Debug\net5.0-windows\ref\Lab2 Gui.dll
+D:\ИРНИТУ\2 курс\Технология программирования\Лаба 2\Исходники\Lab2 Gui\obj\Debug\net5.0-windows\Lab2 Gui.pdb
+D:\ИРНИТУ\2 курс\Технология программирования\Лаба 2\Исходники\Lab2 Gui\obj\Debug\net5.0-windows\Lab2 Gui.genruntimeconfig.cache
