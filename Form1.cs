@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,11 +35,39 @@ namespace Lab2_Gui
             }
 
             string message = Logic.Сonverter(price);
-            MessageBox.Show(message);
-
+            label5.Text = message;
         }
 
         private void price_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void price_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
         }
 
@@ -101,13 +130,18 @@ namespace Lab2_Gui
             }
         }
 
-        private void price_KeyPress(object sender, KeyPressEventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            char number = e.KeyChar;
-            if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
-            {
-                e.Handled = true;
-            }
+            price.Text = "";
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void Form1_FormClosing(object sender, FormClosedEventArgs e)
+        {
+            
         }
     }
 }
