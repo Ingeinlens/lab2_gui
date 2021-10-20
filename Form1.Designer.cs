@@ -46,6 +46,13 @@ namespace Lab2_Gui
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -134,7 +141,7 @@ namespace Lab2_Gui
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(629, 480);
+            this.tabPage1.Size = new System.Drawing.Size(629, 584);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Задание 1";
             // 
@@ -171,6 +178,13 @@ namespace Lab2_Gui
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Bisque;
+            this.tabPage2.Controls.Add(this.button4);
+            this.tabPage2.Controls.Add(this.button3);
+            this.tabPage2.Controls.Add(this.label12);
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.textBox3);
+            this.tabPage2.Controls.Add(this.textBox2);
+            this.tabPage2.Controls.Add(this.textBox1);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label8);
@@ -186,29 +200,32 @@ namespace Lab2_Gui
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.Location = new System.Drawing.Point(18, 375);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(128, 20);
+            this.label10.Size = new System.Drawing.Size(184, 28);
             this.label10.TabIndex = 4;
             this.label10.Text = "Величина вклада";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.Location = new System.Drawing.Point(18, 289);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(128, 20);
+            this.label9.Size = new System.Drawing.Size(308, 28);
             this.label9.TabIndex = 3;
-            this.label9.Text = "Величина вклада";
+            this.label9.Text = "Величина увеличения вклада";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(18, 210);
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(21, 178);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(128, 20);
+            this.label8.Size = new System.Drawing.Size(218, 28);
             this.label8.TabIndex = 2;
-            this.label8.Text = "Величина вклада";
+            this.label8.Text = "💵 Величина вклада";
             // 
             // label7
             // 
@@ -228,10 +245,71 @@ namespace Lab2_Gui
             this.label6.TabIndex = 0;
             this.label6.Text = "Задание 2";
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(24, 219);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(275, 34);
+            this.textBox1.TabIndex = 5;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox2.Location = new System.Drawing.Point(24, 329);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(197, 34);
+            this.textBox2.TabIndex = 6;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox3.Location = new System.Drawing.Point(24, 420);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(197, 34);
+            this.textBox3.TabIndex = 7;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(21, 479);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(58, 20);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "label11";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(88, 479);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(58, 20);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "label12";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(300, 393);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(94, 29);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(448, 392);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(94, 29);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(657, 641);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
@@ -264,6 +342,13 @@ namespace Lab2_Gui
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
