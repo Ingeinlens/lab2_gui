@@ -34,7 +34,6 @@ namespace Lab2_Gui
             label5.Text = message;
         }
 
-
         private void price_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
@@ -110,12 +109,192 @@ namespace Lab2_Gui
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            label9.Visible = false;
+            textBox2.Visible = false;
+            label10.Visible = false;
+            textBox3.Visible = false;
+            button3.Enabled = false;
+
+            label13.Visible = false;
+            label12.Visible = false;
         }
 
         private void Form1_FormClosing(object sender, FormClosedEventArgs e)
         {
-            
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox checkBox1 = (CheckBox)sender;
+            if (checkBox1.Checked == true)
+            {
+                label9.Visible = true;
+                textBox2.Visible = true;
+                button4.Top += 100;
+                button3.Top += 100;
+                label10.Top += 100;
+                textBox3.Top += 100;
+                button3.Enabled = true;
+                label12.Visible = true;
+            }
+            else
+            {
+                label9.Visible = false;
+                textBox2.Visible = false;
+                button4.Top -= 100;
+                button3.Top -= 100;
+                label10.Top -= 100;
+                textBox3.Top -= 100;
+                label12.Visible = false;
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox checkBox1 = (CheckBox)sender;
+            if (checkBox1.Checked == true)
+            {
+                label10.Visible = true;
+                textBox3.Visible = true;
+                button4.Top += 100;
+                button3.Top += 100;
+                button3.Enabled = true;
+                label13.Visible = true;
+            }
+            else
+            {
+                label10.Visible = false;
+                textBox3.Visible = false;
+                button4.Top -= 100;
+                button3.Top -= 100;
+                label13.Visible = false;
+            }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            double numA = double.Parse(this.textBox1.Text);
+            double numB;
+            double numC;
+            try
+            {
+                numB = double.Parse(this.textBox2.Text);
+            }
+            catch (FormatException)
+            {
+                numB = 0;
+            }
+
+            try
+            {
+                numC = double.Parse(this.textBox3.Text);
+            }
+            catch (FormatException)
+            {
+                numC = 0;
+            }
+
+            int restmonth = Logic2.ConditionA(numA, numB);
+            label12.Text = restmonth.ToString() + " м.";
+
+            int rest = Logic2.ConditionB(numA, numC);
+            label13.Text = rest.ToString() + " м.";
+
+            if (numC == 0)
+            {
+                label13.Text = "пока пусто";
+            }
+
+            if (numB == 0)
+            {
+                label12.Text = "пока пусто";
+            }
+        }
+
+        public class Logic2
+        {
+            public static int ConditionA(double numA, double numB)
+            {
+                //Текущее значение месяца
+                int monthNum = 3;
+
+                //Величина увеличения
+                double percentValue = numA * 0.02;
+
+                //Разница месяцев текущего и месяца вклада
+                int restMonth = 0;
+
+                //Обработка программы
+                for (int i = 0; percentValue <= numB; i++)
+                {
+                    numA = numA * 1.02;
+                    percentValue = numA * 0.02;
+                    monthNum++;
+                    restMonth = monthNum - 3;
+                }
+                return restMonth;
+            }
+
+            public static int ConditionB(double numA, double numC)
+            {
+                //Инициализация номера месяца
+                int monthNum = 3;
+
+                //Переменная для проверки, чтобы избежать повторного вывода
+                int checkB = 0;
+
+                //Проверка условия для задания B
+                int rest = 0;
+                for (int i = 0; i < 1200; i++)
+                {
+                    //Увеличение значения текущего месяца
+                    monthNum++;
+
+                    //Увеличение суммы вклада на 0.02% каждый месяц (сложный процент)
+                    numA = numA * 1.02;
+
+                    if (numA > numC && checkB == 0)
+                    {
+                        checkB = 1;
+                        rest = monthNum - 3;
+                    }
+                }
+                return rest;
+            }
+        }
     }
 }
