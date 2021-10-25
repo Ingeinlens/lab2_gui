@@ -41,21 +41,21 @@ namespace Lab2_Gui
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.numC = new System.Windows.Forms.TextBox();
+            this.numB = new System.Windows.Forms.TextBox();
+            this.numA = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -70,6 +70,7 @@ namespace Lab2_Gui
             this.price.Size = new System.Drawing.Size(332, 34);
             this.price.TabIndex = 0;
             this.price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.price_KeyPress);
+            this.price.KeyUp += new System.Windows.Forms.KeyEventHandler(this.price_KeyUp);
             // 
             // label1
             // 
@@ -188,9 +189,9 @@ namespace Lab2_Gui
             this.tabPage2.Controls.Add(this.checkBox1);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.textBox2);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.numC);
+            this.tabPage2.Controls.Add(this.numB);
+            this.tabPage2.Controls.Add(this.numA);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label8);
@@ -202,6 +203,32 @@ namespace Lab2_Gui
             this.tabPage2.Size = new System.Drawing.Size(687, 534);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Задание 2";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.InsetDouble;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.label12, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label13, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(25, 265);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(250, 40);
+            this.tableLayoutPanel1.TabIndex = 16;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(6, 3);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(112, 28);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "пока пусто";
             // 
             // label13
             // 
@@ -263,42 +290,35 @@ namespace Lab2_Gui
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label12
+            // numC
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(6, 3);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(112, 28);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "пока пусто";
+            this.numC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numC.Location = new System.Drawing.Point(362, 351);
+            this.numC.Name = "numC";
+            this.numC.Size = new System.Drawing.Size(302, 34);
+            this.numC.TabIndex = 7;
+            this.numC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numC_KeyPress);
+            this.numC.KeyUp += new System.Windows.Forms.KeyEventHandler(this.numC_KeyUp);
             // 
-            // textBox3
+            // numB
             // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(362, 311);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(302, 34);
-            this.textBox3.TabIndex = 7;
-            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
+            this.numB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numB.Location = new System.Drawing.Point(362, 311);
+            this.numB.Name = "numB";
+            this.numB.Size = new System.Drawing.Size(302, 34);
+            this.numB.TabIndex = 6;
+            this.numB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numB_KeyPress);
+            this.numB.KeyUp += new System.Windows.Forms.KeyEventHandler(this.numB_KeyUp);
             // 
-            // textBox2
+            // numA
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(362, 311);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(302, 34);
-            this.textBox2.TabIndex = 6;
-            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(359, 216);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(302, 34);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.numA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numA.Location = new System.Drawing.Point(359, 216);
+            this.numA.Name = "numA";
+            this.numA.Size = new System.Drawing.Size(302, 34);
+            this.numA.TabIndex = 5;
+            this.numA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numA_KeyPress);
+            this.numA.KeyUp += new System.Windows.Forms.KeyEventHandler(this.numA_KeyUp);
             // 
             // label10
             // 
@@ -348,22 +368,6 @@ namespace Lab2_Gui
             this.label6.TabIndex = 0;
             this.label6.Text = "Задание 2";
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.InsetDouble;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.label12, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label13, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(25, 265);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(250, 40);
-            this.tableLayoutPanel1.TabIndex = 16;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -371,9 +375,11 @@ namespace Lab2_Gui
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(719, 586);
             this.Controls.Add(this.tabControl1);
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Лабораторная №2 GUI";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -406,9 +412,9 @@ namespace Lab2_Gui
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox numC;
+        private System.Windows.Forms.TextBox numB;
+        private System.Windows.Forms.TextBox numA;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label13;

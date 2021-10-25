@@ -13,14 +13,19 @@ namespace Lab2_Gui
 {
     public partial class Form1 : Form
     {
+        //Инициализация формы
         public Form1()
         {
             InitializeComponent();
         }
 
+        //Обработка нажатия на кнопку для задания 1
         private void button1_Click(object sender, EventArgs e)
         {
+            //Инициализация стоимости
             int price;
+
+            //Блок try catch для записи переменной и защиты от ошибок
             try
             {
                 price = int.Parse(this.price.Text);
@@ -30,11 +35,112 @@ namespace Lab2_Gui
                 return;
             }
 
+            //Получение перевода через класс Logic
             string message = Logic.Сonverter(price);
             label5.Text = message;
         }
 
+        //Запрет на ввод всех символов кроме чисел и BackSpace
         private void price_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8 && number != 13) // цифры и клавиша BackSpace
+            {
+                e.Handled = true;
+            }
+        }
+
+        //Добавление перехода по Enter для всей формы
+        //(работает только на половине формы, поэтому
+        //добавлены дополнительные проверки на полях)
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                System.Windows.Forms.SendKeys.Send("{TAB}");
+            }
+        }
+
+        //Функция для добавления перехода по Enter
+        private void price_KeyUp(object sender, KeyEventArgs e)
+        {
+            if ((e.KeyCode == Keys.Enter) || (e.KeyCode == Keys.Return))
+            {
+                this.SelectNextControl((Control)sender, true, true, true, true);
+            }
+        }
+
+        //Кнопка отмены, которая просто очищает поле
+        private void button2_Click(object sender, EventArgs e)
+        {
+            price.Text = "";
+        }
+
+        //Небольшие надстройки для скрытия полей
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            label9.Visible = false;
+            numB.Visible = false;
+            label10.Visible = false;
+            numC.Visible = false;
+            button3.Enabled = false;
+
+            label13.Visible = false;
+            label12.Visible = false;
+        }
+
+        //Чекбокс для демонстрации первого условия
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox checkBox1 = (CheckBox)sender;
+            if (checkBox1.Checked == true)
+            {
+                label9.Visible = true;
+                numB.Visible = true;
+                button4.Top += 100;
+                button3.Top += 100;
+                label10.Top += 100;
+                numC.Top += 100;
+                button3.Enabled = true;
+                label12.Visible = true;
+            }
+            else
+            {
+                label9.Visible = false;
+                numB.Visible = false;
+                button4.Top -= 100;
+                button3.Top -= 100;
+                label10.Top -= 100;
+                numC.Top -= 100;
+                label12.Visible = false;
+            }
+        }
+
+        //Чекбокс для демонстрации второго условия
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox checkBox1 = (CheckBox)sender;
+            if (checkBox1.Checked == true)
+            {
+                label10.Visible = true;
+                numC.Visible = true;
+                button4.Top += 100;
+                button3.Top += 100;
+                button3.Enabled = true;
+                label13.Visible = true;
+            }
+            else
+            {
+                label10.Visible = false;
+                numC.Visible = false;
+                button4.Top -= 100;
+                button3.Top -= 100;
+                label13.Visible = false;
+            }
+        }
+
+        //Запрет на ввод всех символов кроме чисел и BackSpace
+        private void numA_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
             if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
@@ -43,8 +149,106 @@ namespace Lab2_Gui
             }
         }
 
+        //Запрет на ввод всех символов кроме чисел и BackSpace
+        private void numB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
+            {
+                e.Handled = true;
+            }
+        }
+
+        //Запрет на ввод всех символов кроме чисел и BackSpace
+        private void numC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
+            {
+                e.Handled = true;
+            }
+        }
+
+        //Кнопка для очистки полей во втором задании
+        private void button4_Click(object sender, EventArgs e)
+        {
+            numA.Text = "";
+            numB.Text = "";
+            numC.Text = "";
+        }
+
+        //Обработчик
+        private void button3_Click(object sender, EventArgs e)
+        {
+            double numA = double.Parse(this.numA.Text);
+            double numB;
+            double numC;
+            try
+            {
+                numB = double.Parse(this.numB.Text);
+            }
+            catch (FormatException)
+            {
+                numB = 0;
+            }
+
+            try
+            {
+                numC = double.Parse(this.numC.Text);
+            }
+            catch (FormatException)
+            {
+                numC = 0;
+            }
+
+            int restmonth = Logic.ConditionA(numA, numB);
+            label12.Text = restmonth.ToString() + " м.";
+
+            int rest = Logic.ConditionB(numA, numC);
+            label13.Text = rest.ToString() + " м.";
+
+            if (numC == 0)
+            {
+                label13.Text = "пока пусто";
+            }
+
+            if (numB == 0)
+            {
+                label12.Text = "пока пусто";
+            }
+        }
+
+        //Функция для добавление перехода по Enter
+        private void numA_KeyUp(object sender, KeyEventArgs e)
+        {
+            if ((e.KeyCode == Keys.Enter) || (e.KeyCode == Keys.Return))
+            {
+                this.SelectNextControl((Control)sender, true, true, true, true);
+            }
+        }
+
+        //Функция для добавления перехода по Enter
+        private void numB_KeyUp(object sender, KeyEventArgs e)
+        {
+            if ((e.KeyCode == Keys.Enter) || (e.KeyCode == Keys.Return))
+            {
+                this.SelectNextControl((Control)sender, true, true, true, true);
+            }
+        }
+
+        //Функция для добавление перехода по Enter
+        private void numC_KeyUp(object sender, KeyEventArgs e)
+        {
+            if ((e.KeyCode == Keys.Enter) || (e.KeyCode == Keys.Return))
+            {
+                this.SelectNextControl((Control)sender, true, true, true, true);
+            }
+        }
+
+        //Главный класс для обратки данных и их вывода
         public class Logic
         {
+            //Конвертер для получения стоимости товара
             public static string Сonverter(int price)
             {
                 //просчитывание стоимости товара в рублях и копейках
@@ -100,153 +304,8 @@ namespace Lab2_Gui
                 }
                 return message;
             }
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            price.Text = "";
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            label9.Visible = false;
-            textBox2.Visible = false;
-            label10.Visible = false;
-            textBox3.Visible = false;
-            button3.Enabled = false;
-
-            label13.Visible = false;
-            label12.Visible = false;
-        }
-
-        private void Form1_FormClosing(object sender, FormClosedEventArgs e)
-        {
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckBox checkBox1 = (CheckBox)sender;
-            if (checkBox1.Checked == true)
-            {
-                label9.Visible = true;
-                textBox2.Visible = true;
-                button4.Top += 100;
-                button3.Top += 100;
-                label10.Top += 100;
-                textBox3.Top += 100;
-                button3.Enabled = true;
-                label12.Visible = true;
-            }
-            else
-            {
-                label9.Visible = false;
-                textBox2.Visible = false;
-                button4.Top -= 100;
-                button3.Top -= 100;
-                label10.Top -= 100;
-                textBox3.Top -= 100;
-                label12.Visible = false;
-            }
-        }
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckBox checkBox1 = (CheckBox)sender;
-            if (checkBox1.Checked == true)
-            {
-                label10.Visible = true;
-                textBox3.Visible = true;
-                button4.Top += 100;
-                button3.Top += 100;
-                button3.Enabled = true;
-                label13.Visible = true;
-            }
-            else
-            {
-                label10.Visible = false;
-                textBox3.Visible = false;
-                button4.Top -= 100;
-                button3.Top -= 100;
-                label13.Visible = false;
-            }
-        }
-
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char number = e.KeyChar;
-            if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char number = e.KeyChar;
-            if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char number = e.KeyChar;
-            if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox3.Text = "";
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            double numA = double.Parse(this.textBox1.Text);
-            double numB;
-            double numC;
-            try
-            {
-                numB = double.Parse(this.textBox2.Text);
-            }
-            catch (FormatException)
-            {
-                numB = 0;
-            }
-
-            try
-            {
-                numC = double.Parse(this.textBox3.Text);
-            }
-            catch (FormatException)
-            {
-                numC = 0;
-            }
-
-            int restmonth = Logic2.ConditionA(numA, numB);
-            label12.Text = restmonth.ToString() + " м.";
-
-            int rest = Logic2.ConditionB(numA, numC);
-            label13.Text = rest.ToString() + " м.";
-
-            if (numC == 0)
-            {
-                label13.Text = "пока пусто";
-            }
-
-            if (numB == 0)
-            {
-                label12.Text = "пока пусто";
-            }
-        }
-
-        public class Logic2
-        {
+            //Просчёт превышения процента от вклада за месяц
             public static int ConditionA(double numA, double numB)
             {
                 //Текущее значение месяца
@@ -269,6 +328,7 @@ namespace Lab2_Gui
                 return restMonth;
             }
 
+            //Второе значение суммы вклада через n месяцев
             public static int ConditionB(double numA, double numC)
             {
                 //Инициализация номера месяца
