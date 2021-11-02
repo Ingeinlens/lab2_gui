@@ -356,5 +356,6 @@ namespace Lab2_Gui
                 return rest;
             }
         }
+
     }
 }

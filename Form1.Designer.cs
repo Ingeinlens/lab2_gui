@@ -293,7 +293,7 @@ namespace Lab2_Gui
             // numC
             // 
             this.numC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numC.Location = new System.Drawing.Point(362, 351);
+            this.numC.Location = new System.Drawing.Point(362, 311);
             this.numC.Name = "numC";
             this.numC.Size = new System.Drawing.Size(302, 34);
             this.numC.TabIndex = 7;
